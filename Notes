@@ -1,0 +1,12 @@
+git config --global user.name "kullanıcı adı / rumuz"
+    git config --global user.email "E-posta"
+    git config --list             # Calisma ve kullanici bilgilerini göster
+
+
+    1. Create a project CarManagement project in local
+    2. Create a app for Car Fleet management, push it to the origin
+    3. In a custom branch, create a basic functionality for adding, modifying and deleting the cars. User should be able to see the whole previously entered list. Entered data will be lost on program termintation.
+    When done, push the branch to origin. Create a merge request to master.
+    4. Create a branch from the one that was created in the previous task. Cover functionality with UnitTests. When done, push the branch to origin and create a merge request (MR) to the branch that was created in the 3rd task.
+    5. Checkout the branch from the 3rd task. Add a functionality to export the list of cars to a text file. When done, please commit and push
+    6. Checkout the branch created in the 4th task. Rebase it on the top of the latest commits of the branch from the 3rd task. Cover added functionality with UnitTests. When done, commit and push.
