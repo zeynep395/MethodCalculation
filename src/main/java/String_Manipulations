@@ -1,0 +1,212 @@
+
+String Manipulations
+
+charAt():       String bir ifadede, istinilen karakterin index cinsinden String'deki yerine gore  alinmasini saglar.
+                Return Type     : char
+                    For Example:
+                    name.charAt(4); ------>> name'deki 4. index'teki harfi verir. Tabi name'in en az 5 harften olusmasi lazim.
+
+                    name.charAt(name.length()-1) ------>> String ifadede son index'in karakterini verir.
+
+
+concat():       Birlestirme methodudur. Stringin sonuna parantezin icine yazilan ifade ya da karakter eklenir.
+                Return Type     : String
+                    For Example:
+                    name.concat(" Efe");
+
+
+contains():     String'in icinde aranan ifade yada karakter parantez icine yazilir.
+                Return Type     : Boolean
+                    For Example:
+                    email.contains("@");
+
+
+endsWith():     String'in parantez icinde yazilan ifade ya da karakter ile bitip bitmedigini test eder.
+                Return Type     : Boolean
+                    For Example:
+                    lastName.startsWith("fe");
+
+
+equals():       String bir ifadenin istenilen ifadeye esit olup olmadigini sorgular. Kucuk-buyuk harf duyarliligi vardir.
+                Return Type     : Boolean
+                    For Example:
+                    lastName.equals("efe");  --->> lastName "EFE" ise false,   lastName "efe" ise true doner.
+
+
+equalsIgnoreCase(): String bir ifadeyi kucuk-buyuk harfe dikkat etmeden esit olup olmadigini sorgular.
+                Return Type     : Boolean
+                        For Example:
+                        lastName.equalsIgnoreCase("efe");
+
+
+isBlank():      String bir ifade bosluk haric hicbir sey olup olmadigini kontrol eder. Boslukla - hicbir seyin olmamasi aynidir.
+                Return Type     : Boolean
+                    For Example:
+                    lastName.isBlank();   --->> lastName'de bosluk haric hicbir sey olmadiginda true doner.
+
+
+isEmpty():      String bir ifadenin bos olup olmadigini kontrol eder. Bosluk dahi olsa dolu sayar.
+                Return Type     : Boolean
+                    For Example:
+                    lastName.isEmpty();   --->> lastName tamamen bossa yani bosluk bile yoksa true doner.
+
+                    length()==0 ile isEmpty() same
+
+                    isEmpty("")==> true     isEmpty("    ")==> false
+                    isBlank("")==> true     isBlank("    ")==> true
+
+
+
+indexOf():      String bir ifadede istenilen ifadenin ya da karakterin ilk basladigi yerin index numarasini verir.
+                Return Type     : Int
+                    For Example:
+                    fullName.indexOf("E");  --->> fullName'deki E harfinin ilk basladigi index numarasini verir. //6
+                    fullName.indexOf("EFE") --->> fullName'deki EFE ifadesinin ilk basladigi index numarasini verir. //6
+
+                    Eger aranan karakter yoksa -1 doner.
+
+                    Parametreli kullanilirsa;
+                    fullName.indexOf("E", 5); --->> fullName'de 5. indexten sonra E harfinin ilk basladigi index numarasini verir. //6
+
+
+lastIndexOf():  String bir ifadede istenilen ifadenin ya da karakterin son basladigi yerin index numarasini verir.
+                Return Type     : Int
+                    For Example:
+                    fullName.lastIndexOf("E");  --->> fullName'deki E harfinin son basladigi index numarasini verir. //8
+                    fullName.lastIndexOf("EFE") --->> fullName'deki EFE ifadesinin son basladigi index numarasini verir. //6
+
+                    Yani sonun basi
+
+                    Parametreli kullanilirsa;
+                        Parametreli kullanildiginda son indexten basa dogru aramaya baslar. Yani sagdan sola dogru.
+                    fullName.lastIndexOf("E",8) --->> fullName'de 8. indexten itibaren 0. indexe dogru aramaya baslar ve ilk buldugu index numarasini verir. //8
+                    fullName.lastIndexOf("E",7) --->> fullName'de 7. indexten itibaren 0. indexe dogru aramaya baslar ve ilk buldugu index numarasini verir. //6
+
+length():       String'in uzunlugunu int olarak bize verir.
+                Return Type     : Int
+                    For Example:
+                    fullName.length();
+
+
+next():         Scanner sınıfı kullanılarak konsoldan kullanıcıdan veri girişi alınir.
+nextLine():     Scanner sınıfında, next() ve nextLine() metodları, farklı türlerde kullanıcı girişlerini okumak için kullanılırlar.
+                Disaridan girilen ifadeyi String olarak algilar.
+                nextLine()  --->>>  Cumle olarak
+                next()      --->>>  Kelime olarak algilar.
+                                    Cumle olarak atansa bile next() kullanildigi icin Cumlenin ilk kelimesini algilar.
+
+                Return Type     : String
+                    For Example:
+                    Scanner scanner = new Scanner(System.in);
+
+                    System.out.print("Enter your address: ");
+                    String address2 = scanner.nextLine();
+                    System.out.println("Your address is: " + address2);  // nextline() kullanildigi icin  tum String i yazdirir.
+
+                    System.out.print("Enter your full name: ");
+                    String fullName = scanner.next();
+                    System.out.println("Your name is: " + fullName);    // next() kullanildigi icin String'in ilk kelimesini yazdirir.
+
+
+
+
+replace():      String bir ifadede degistirilmek istenen ifade ya da karakter ile yeni karakterler parantezin icine yazilir.
+                Return Type     : String
+                    For Example:
+                    name.replace("a", "e");         --->>  name deki tum a harflerini e ile degistirir.
+                    name.replace("Maria", "Sofia") --->>  name deki Maria kelimelerini  Sofia ile degistirir.
+
+
+replaceFirst(): String bir ifadede ilk degistirilmek istenen ifade ya da karakter ile yeni karakterler parantezin icine yazilir.
+                Return Type     : String
+                    For Example:
+                    name.replaceFirst("a", "e");        --->>  name deki ilk a harfini e ile degistirir.
+                    name.replace("Maria", "Sofia")     --->>  name deki ilk Maria kelimesini  Sofia ile degistirir.
+
+
+replaceAll():   regex'ler ile de kullanilir.
+                Return Type     : String
+
+                [0-9A-Za-z]     tum rakam ve buyuk kucuk harfler.
+                [aeiou]         tum sesli harfler.
+                [^0-9]          rakamlarin disindakiler.    same   [\\D]
+                [^a-zA-Z]       harflerin disindakiler.
+                [\\s]           tum bosluklar.
+                [\\S]           bosluk disindakiler.
+                [\\p{Punct}]    tum noktalama isaretleri
+
+                    For Example:
+                    name.replaceAll("[a-z]","**")   --->> tum kucuk harflerin yerine "**" yerlestirir.
+
+
+
+FOR EXAMPLE :
+
+String sentence = "ilim ilim bilmektir, ilim kendin bilmektir, Sen kendin bilmezsen, Bu nice okumaktir.";
+        System.out.println("sentence = " + sentence.replace("ilim", "*")); //Tum ilim'ler "*" ile degisir.
+        System.out.println("sentence = " + sentence.replaceAll("ilim", "*")); //Tum ilim'ler "*" ile degisir.
+        System.out.println("sentence = " + sentence.replaceFirst("ilim", "*")); // Sadece ilk ilim "*" ile degisir.
+        System.out.println("sentence = " + sentence.replaceFirst("[aeiou]", "*")); // Sadece ilk sesli harf "*" ile degisir.
+        System.out.println("sentence = " + sentence.replaceAll("[aeiou]", "*")); // Tum  sesli harfler "*" ile degisir.
+
+
+
+
+split():        Parantezin icine yazilan ifadeye gore String'i ayirir.
+                Return Type     : String[]
+                    For Example:
+                    fullName.split(" ")     --->> String ifadeyi bosluklardan ayirir. Ve ayirdigi kadar index olusur.
+                                                  split() methodu ile ayrilan string'ler bir Array olusturur.
+
+                    fullName.split(" ")[1]  --->> Bu sekilde yazarsak ayirdiktan sonra,
+                                                  ayrilan String lerin 1. index'indeki ifadeyi verir.
+                                                  Verdigi ifade Array degil String'dir.
+
+                    sentence.split(" ").length   --->> Bosluklardan ayrilan String'in kac tane oldugunu verir.
+
+                    Arrays.toString(sentence.split(" ")) --->> Bu da String leri Bir Array'de yazar.
+
+
+substring():    String bir ifadenin isteinlen karakterlerini almamizi saglar.
+                Return Type     : String
+                    For Example:
+                    name.substring(2,5) --->> name'in 2. indexi dahil 5. index'e kadar olan ifadeleri alir. 5. index dahil degil. Bosluklari da sayar.
+                    name.substring(2)   --->> name'in 2. indexden sonraki tum ifadeleri alir.
+
+
+
+startsWith():   String'in parantez icinde yazilan ifade ya da karakter ile baslayip baslamadigini test eder.
+                Return Type     : Boolean
+                    For Example:
+                    name.startsWith("Mar");
+
+                    parametreli kullanilirsa;
+                    name.startsWith("Mar",0) ----> 0. index'in tirnak isaretli ifade ile baslayip baslamadigini kontrol eder.
+
+
+
+toLowerCase():  String ifadenin hepsini kucuk harf yapar.
+                Return Type     : String
+                    For Example:
+                    name.toLowerCase();
+
+
+
+toUpperCase():  String ifadenin hepsini buyuk harf yapar.
+                Return Type     : String
+                    For Example:
+                    name.toUpperCase();
+
+
+trim():         String ifadenin hem basindaki hem sonundaki bosluklari kaldirir. Ortadakilerini kaldirmaz.
+                Return Type     : String
+                    For Example:
+                    sentence.trim();
+
+
+valueOf():      Datatipi degistirmede kullanilir.
+                    For Example:
+                    int x = 42;
+                    String str1 = String.valueOf(x);
+                    System.out.println(str1); // "42"
+

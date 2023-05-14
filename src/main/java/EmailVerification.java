@@ -1,7 +1,2 @@
-import java.util.Scanner;
-
 public class EmailVerification {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-    }
 }
